@@ -1,0 +1,3 @@
+[submodule "Assets/brutus-planner"]
+	path = Assets/brutus-planner
+	url = git@github.com:mcarr390/brutus-planner.git
