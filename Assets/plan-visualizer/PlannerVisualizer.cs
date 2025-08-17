@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Brutus;
+using brutus_planner.abstractions;
 using UnityEngine;
 
 public class PlannerVisualizer : MonoBehaviour
@@ -36,6 +36,8 @@ public class PlannerVisualizer : MonoBehaviour
     AgentMover agentInstance;
     Dictionary<string, Vector2Int> map;
 
+    [Header("Agent Provider (from BE)")]
+    [SerializeField] private AgentProvider agentProvider; // assign SO asset in Inspector
     void Reset()
     {
         // Example defaults
@@ -52,16 +54,16 @@ public class PlannerVisualizer : MonoBehaviour
     Dictionary<string, System.Numerics.Vector3> fullPlan;
     void Start()
     {
-        var agent = new Agent();
+        var agent = agentProvider.CreateAgent();
         
         fullPlan = agent.CreatePlan();
+
         
         if (grid == null)
         {
             Debug.LogError("GridNav reference missing.");
             return;
         }
-        
 
         // Build dictionary
         map = new Dictionary<string, Vector2Int>();
@@ -98,20 +100,30 @@ public class PlannerVisualizer : MonoBehaviour
         var startWorld = grid.GridToWorld(agentStart);
         agentInstance.transform.position = new Vector3(startWorld.x, 0.9f, startWorld.z);
 
+        LogPlan(fullPlan);
         // Kick off plan runner
         StartCoroutine(RunPlan());
     }
 
+    void LogPlan(Dictionary<string, System.Numerics.Vector3> plan)
+    {
+        string planLog = "Full Plan: \n";
+
+        foreach (var planStep in plan)
+        {
+            planLog += $"{planStep.Key} at {planStep.Value} \n";
+        }
+        
+        Debug.Log(planLog);
+        
+    }
+
     IEnumerator RunPlan()
     {
-
-        
         
         // Basic display in Console
-        int cost = fullPlan.Count;
-        Debug.Log($"Plan found with cost {cost}");
-        for (int i = 0; i < fullPlan.Count; i++)
-            Debug.Log($"{i + 1}: {fullPlan.ElementAt(i).Key} at {fullPlan.ElementAt(i).Value}");
+        //for (int i = 0; i < fullPlan.Count; i++)
+            //Debug.Log($"{i + 1}: {fullPlan.ElementAt(i).Key} at {fullPlan.ElementAt(i).Value}");
 
         // Step through tasks
         for (int i = 0; i < fullPlan.Count; i++)
@@ -119,7 +131,7 @@ public class PlannerVisualizer : MonoBehaviour
             var step = fullPlan.ElementAt(i).Key;
             if (!map.TryGetValue(step, out var target))
             {
-                Debug.LogWarning($"No location defined for '{step}'. Skipping.");
+                //Debug.LogWarning($"No location defined for '{step}'. Skipping.");
                 continue;
             }
             yield return agentInstance.MoveTo(target);
@@ -127,7 +139,7 @@ public class PlannerVisualizer : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
 
-        Debug.Log("Plan complete.");
+        //Debug.Log("Plan complete.");
     }
 
     void SpawnMarker(LocationDef loc)

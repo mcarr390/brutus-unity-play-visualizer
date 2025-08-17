@@ -1,0 +1,16 @@
+{
+    "name": "PlanVisualizer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a3fc2dcb30521d84d832b0306a72a838"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

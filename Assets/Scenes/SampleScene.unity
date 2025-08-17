@@ -296,6 +296,7 @@ MonoBehaviour:
   grid: {fileID: 780125788}
   agentPrefab: {fileID: 0}
   agentStart: {x: 1, y: 1}
+  agentProvider: {fileID: 11400000, guid: 6cc4f30ebab70874ea3075393f38bf81, type: 2}
 --- !u!4 &869651910
 Transform:
   m_ObjectHideFlags: 0
