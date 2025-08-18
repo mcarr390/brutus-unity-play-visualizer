@@ -7,3 +7,6 @@
 [submodule "Assets/unity-json-viewer"]
 	path = Assets/unity-json-viewer
 	url = git@github.com:mcarr390/unity-json-viewer.git
+[submodule "Assets/ai-humanoid-navigation"]
+	path = Assets/ai-humanoid-navigation
+	url = git@github.com:mcarr390/AIHumanoidNavigation.git
