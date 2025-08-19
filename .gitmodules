@@ -10,3 +10,6 @@
 [submodule "Assets/ai-humanoid-navigation"]
 	path = Assets/ai-humanoid-navigation
 	url = git@github.com:mcarr390/AIHumanoidNavigation.git
+[submodule "Assets/fantasy-kingdom"]
+	path = Assets/fantasy-kingdom
+	url = git@github.com:mcarr390/PolygonFantasyKingdom.git

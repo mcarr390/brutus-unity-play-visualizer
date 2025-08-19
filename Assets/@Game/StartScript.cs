@@ -13,7 +13,7 @@ namespace Game
 
             foreach (var res in ResourceRegistry.Registry)
             {
-                Debug.Log(res.Value.Name);
+                //Debug.Log(res.Value.Name);
             }
         }
 
