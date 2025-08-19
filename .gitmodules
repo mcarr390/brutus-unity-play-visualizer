@@ -1,3 +1,15 @@
 [submodule "Assets/brutus-planner"]
 	path = Assets/brutus-planner
 	url = git@github.com:mcarr390/brutus-planner.git
+[submodule "Assets/tasks-and-resources"]
+	path = Assets/tasks-and-resources
+	url = git@github.com:mcarr390/brutus-tasks-and-resources.git
+[submodule "Assets/unity-json-viewer"]
+	path = Assets/unity-json-viewer
+	url = git@github.com:mcarr390/unity-json-viewer.git
+[submodule "Assets/ai-humanoid-navigation"]
+	path = Assets/ai-humanoid-navigation
+	url = git@github.com:mcarr390/AIHumanoidNavigation.git
+[submodule "Assets/fantasy-kingdom"]
+	path = Assets/fantasy-kingdom
+	url = git@github.com:mcarr390/PolygonFantasyKingdom.git
