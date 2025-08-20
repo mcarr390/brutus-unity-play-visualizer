@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "Game",
     "rootNamespace": "",
     "references": [
@@ -15,3 +16,7 @@
     "versionDefines": [],
     "noEngineReferences": false
 }
+=======
+	"name": "Game"
+}
+>>>>>>> 2754e25 (Setup odin, setup game actions/resources)

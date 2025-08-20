@@ -1,0 +1,17 @@
+{
+    "name": "Game.Data.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:353c307a95fa04145bf2f4af206c54e4",
+        "GUID:b01ce97ff5aff454189b574a7e5b20b3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
